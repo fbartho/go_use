@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# This will change your GOROOT, GOPATH, and PATH to point at the right go settings.
+alias go_use_refresh="source `which go_use_fixup_env`"
+
 # Brew's recipe for go 1.2 is called "go12"
-alias go_use_12="go_use go12; source `which go_use_fixup_env`"
+alias go_use_12="go_use go12; go_use_refresh"
 
 # brew's recipe for go 1.4 is currently "go"
-alias go_use_14="go_use go; source `which go_use_fixup_env`"
+alias go_use_14="go_use go; go_use_refresh"

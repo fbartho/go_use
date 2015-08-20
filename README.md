@@ -27,9 +27,8 @@ If you need to switch between versions of go for different projects, things can 
 3. Make sure to create the go-paths once you've decided. bin, pkg, src folders should be present in each.
 4. Drop these scripts into a folder that is in your $PATH. (or link this folder into your PATH)
 5. `echo "go" > ~/.go_ver` (this file stores the "current" choice of go version)
-6. [Recommended] add the following to your bash .profile or .bash_login files. This will load in the appropriate paths & roots into your shell's environment, and install the aliases to switch between versions
+6. [Recommended] add the following to your bash .profile or .bash_login files. This will install the aliases to switch between versions and also load in the appropriate paths & roots into your shell's environment.
 	
 ```
-	source `which go_use_aliases`
-	source `which go_use_fixup_env`
+	source `which go_use_aliases`; go_use_refresh
 ```
