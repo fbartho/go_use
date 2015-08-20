@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Fills in the paths necessary to use go.
+# This file is meant to be sourced,
+#	source `which go_use_fixup_env`
+# or used before calling subshells
+
+# Set this variable for your preferences.
+GOPATHBASE=~/Code/gopath
+
+GOVER=$(cat ~/.go_ver)
+
+GOVERSION=$(brew list ${GOVER} | head -n 1 | cut -d '/' -f 6)
+export GOROOT=$(brew --prefix)/Cellar/$GOVER/$GOVERSION/libexec
+export GOPATH="$GOPATHBASE/$GOVER"
+export PATH=$GOROOT/bin:$PATH:
+
+GOVERLONG=$(go version)
+echo "Using ${GOVERLONG} at ${GOPATH}"

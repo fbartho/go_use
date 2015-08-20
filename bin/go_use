@@ -1,0 +1,13 @@
+#!/bin/bash
+
+GOVER=$(cat ~/.go_ver)
+GOVERLONG=$(go version)
+
+echo "Was using ${GOVER} (${GOVERLONG})"
+brew unlink $GOVER
+echo "$1" > ~/.go_ver
+
+GOVER=$(cat ~/.go_ver)
+brew link --overwrite $GOVER
+
+result=`source go_use_fixup_env`

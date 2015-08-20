@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Brew's recipe for go 1.2 is called "go12"
+alias go_use_12="go_use go12; source `which go_use_fixup_env`"
+
+# brew's recipe for go 1.4 is currently "go"
+alias go_use_14="go_use go; source `which go_use_fixup_env`"
