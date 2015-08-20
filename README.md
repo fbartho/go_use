@@ -23,7 +23,7 @@ If you need to switch between versions of go for different projects, things can 
 # Installation
 
 1. First, install the go versions you want to use. Examples: `brew install go` `brew install go12` (ignore warnings about linkage, of course they collide!)
-2. Decide where you want the global go-paths for each version to be. (Edit GOPATHBASE in [go_use_fixup_env](../bin/go_use_fixup_env) for your environment). This keeps different go-versions of packages from clobbering each other.
+2. Decide where you want the global go-paths for each version to be. (Edit GOPATHBASE in [go_use_fixup_env](./bin/go_use_fixup_env) for your environment). This keeps different go-versions of packages from clobbering each other.
 3. Make sure to create the go-paths once you've decided. bin, pkg, src folders should be present in each.
 4. Drop these scripts into a folder that is in your $PATH. (or link this folder into your PATH)
 5. `echo "go" > ~/.go_ver` (this file stores the "current" choice of go version)
