@@ -20,6 +20,8 @@ If you need to switch between versions of go for different projects, things can 
 	/usr/local/Cellar/go/1.4.2/libexec
 	/Users/fbartho/Code/gopath/go
 
+Also, if you're working in multiple shell windows, after switching which go is active, you'll want to run `go_use_refresh` in your other shells to update the environment.
+
 # Installation
 
 1. First, install the go versions you want to use. Examples: `brew install go` `brew install go12` (ignore warnings about linkage, of course they collide!)
