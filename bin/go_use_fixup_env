@@ -13,7 +13,15 @@ GOVER=$(cat ~/.go_ver)
 GOVERSION=$(brew list ${GOVER} | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(brew --prefix)/Cellar/$GOVER/$GOVERSION/libexec
 export GOPATH="$GOPATHBASE/$GOVER"
-export PATH=$GOROOT/bin:$PATH:
+
+# Insert our GOROOT's bin at the front of $PATH
+DUPLICATEHEAVYPATH=$GOROOT/bin:$PATH:
+FINALPATH=$DUPLICATEHEAVYPATH
+
+# Uncomment this line to purge duplicates from your $PATH.
+#FINALPATH=$(echo -n $DUPLICATEHEAVYPATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
+# Reference: http://unix.stackexchange.com/a/40755/129409
+export PATH=$FINALPATH
 
 GOVERLONG=$(go version)
 echo "Using ${GOVERLONG} at ${GOPATH}"
