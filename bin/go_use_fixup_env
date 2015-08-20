@@ -15,7 +15,7 @@ export GOROOT=$(brew --prefix)/Cellar/$GOVER/$GOVERSION/libexec
 export GOPATH="$GOPATHBASE/$GOVER"
 
 # Insert our GOROOT's bin at the front of $PATH
-DUPLICATEHEAVYPATH=$GOROOT/bin:$PATH:
+DUPLICATEHEAVYPATH=$GOROOT/bin:$GOPATH/bin:$PATH:
 FINALPATH=$DUPLICATEHEAVYPATH
 
 # Uncomment this line to purge duplicates from your $PATH.
