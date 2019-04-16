@@ -9,8 +9,7 @@
 GOPATHBASE=~/Code/gopath
 
 GOVER=$(cat ~/.go_ver)
-
-GOVERSION=$(brew list ${GOVER} | head -n 1 | cut -d '/' -f 6)
+GOVERSION=$(brew list ${GOVER} | grep '/bin/go' | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(brew --prefix)/Cellar/$GOVER/$GOVERSION/libexec
 export GOPATH="$GOPATHBASE/$GOVER"
 
